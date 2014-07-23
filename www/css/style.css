@@ -13,13 +13,18 @@
 }
 
 .pull-left {
-	float: left
+	float: left;
 }
 
 .pull-right {
-	float: right
+	float: right;
+	display: inline;
 }
 
 .card-timetable {
 	text-align: center;
+}
+
+.has-tabs {
+	bottom: 60px;
 }

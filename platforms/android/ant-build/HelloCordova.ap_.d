@@ -42,7 +42,6 @@ H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\README.m
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\css\style.css \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\img\ionic.png \
-H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\js\5ef7604d-955b-47e7-a90b-72a2a173e6d6.dmp \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\js\app.js \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\js\controllers.js \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\lib\angular-timer.min.js \

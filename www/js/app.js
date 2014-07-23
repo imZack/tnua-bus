@@ -31,6 +31,7 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     TNUA: 'TNUA',
     Kuandu_MRT: 'Kuandu MRT',
     weekday: 'Weekday',
+    weekend: 'Weekend',
     special: 'Special',
     summer_weekday: 'Summer Weekday',
     summer_daily: 'Summer Daily',
@@ -40,7 +41,9 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     shuttlebus: 'Shuttle Bus',
     NO_BUSES: 'No buses.',
     NO_BUSES_DESCR: 'Please select others.',
-    THANKS: 'Thanks'
+    THANKS: 'Thanks',
+    MODE_SUMMER: 'Summer',
+    MODE_NORMAL: 'Normal'
   });
   $translateProvider.translations('zh-TW', {
     APP_NAME: '北藝大校車 APP',
@@ -52,16 +55,19 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     TNUA: '北藝大',
     Kuandu_MRT: '關渡捷運站',
     weekday: '平日',
+    weekend: '假日',
     special: '專車',
     summer_weekday: '暑假平日',
     summer_daily: '暑假每日',
-    dashboard: '總覽',
+    dashboard: '最近班次',
     red35: '紅 35',
     red55: '紅 55',
     shuttlebus: '校車',
     NO_BUSES: '沒有車輛',
     NO_BUSES_DESCR: '請選擇其他項目',
-    THANKS: '謝謝'
+    THANKS: '謝謝',
+    MODE_SUMMER: '暑假',
+    MODE_NORMAL: '正常'
   });
   $translateProvider.preferredLanguage('zh-TW');
 })
@@ -72,7 +78,8 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     .state('bus', {
       url: "/bus",
       abstract: true,
-      templateUrl: "templates/menu.html"
+      templateUrl: "templates/menu.html",
+      controller: "MenuCtrl"
     })
     .state('bus.about', {
       url: "/about",

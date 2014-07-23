@@ -1,9 +1,12 @@
 <ion-nav-bar class="bar bar-header bar-positive"></ion-nav-bar>
-<ion-view title="{{'APP_NAME' | translate}}">
+<ion-view title="{{'TO' | translate}} {{dest | translate}}">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <div class="tabs tabs-icon-top">
+  <ion-nav-buttons side="right">
+  	<button class="button" ng-click='toggleMode()'>{{mode | translate}}</button>
+  </ion-nav-buttons>
+  <div class="tabs tabs-icon-top tabs-positive">
     <a class="tab-item" ng-click='changeDest("TNUA")'>
     	<i class="icon ion-university"></i>
       {{'TO' | translate}} {{'TNUA' | translate}}
@@ -13,17 +16,17 @@
       {{'TO' | translate}} {{'Kuandu_MRT' | translate}}
     </a>
   </div>
-  <ion-content class="has-header">
+  <ion-content class="has-header has-tabs">
   <div class="card" animation="fade-in" ng-class="{'card-timeout': bus.timeout}" ng-repeat="bus in buses | orderBy:'remainingTime'">
     <div class="item item-divider">
-    <div class="pull-left">{{bus.time}} {{'TO' | translate}} {{bus.dest | translate}} [{{bus.name | translate}}]</div>
+    <div class="pull-left">{{bus.time}} - {{bus.name | translate}}</div>
     <div class="pull-right"><small>{{bus.type | translate}}</small></div>
     </div>
     <div class="item item-text-wrap">
       <div class="dashboard-time">
-        <timer countdown="bus.remainingTime" max-time-unit="'minute'" interval="1000" finish-callback="timeout(bus);">{{mminutes}} {{'MINUTES' | translate}}</timer>
+        <timer countdown="bus.remainingTime" max-time-unit="'minute'" interval="1000" finish-callback="timeout(bus);">{{mminutes}} {{'MINUTES' | translate}} {{sseconds}}</timer>
       </div>
     </div>
   </div>
-
+  </ion-content>
 </ion-view>

@@ -20,8 +20,6 @@ angular.module('tnua-bus.controllers', [])
 			if (options.dest && value.dest.indexOf(options.dest) == -1) return;
 			if (value.remainingTime > options.maxDiffTime) return;
 
-			//if (out.length >= limits) return;
-
 			out.push(value);
 		});
 
@@ -33,32 +31,35 @@ angular.module('tnua-bus.controllers', [])
 	$scope.dest = 'TNUA';
 	var maxDiffTime = Number.MAX_VALUE;
 
-	TimeTableService.getData().then(function(buses) {
-		$scope.busData = TimeTableService.calRemainingTime(buses);
-		if ($stateParams.name == 'dashboard') {
-			maxDiffTime = 3600;
-			$scope.buses = $filter('busFilter')({
-				data: $scope.busData,
-				name: $stateParams.name,
-				dest: $scope.dest,
-				maxDiffTime: maxDiffTime
-			});
-		} else {
-			maxDiffTime = Number.MAX_VALUE;
-			$scope.buses = $filter('busFilter')({
-				data: $scope.busData,
-				name: $stateParams.name,
-				dest: $scope.dest
+	$scope.load = function() {
+		TimeTableService.getData().then(function(buses) {
+			$scope.busData = TimeTableService.calRemainingTime(buses);
+			if ($stateParams.name == 'dashboard') {
+				maxDiffTime = 3600;
+				$scope.buses = $filter('busFilter')({
+					data: $scope.busData,
+					name: $stateParams.name,
+					dest: $scope.dest,
+					maxDiffTime: maxDiffTime
+				});
+			} else {
+				maxDiffTime = Number.MAX_VALUE;
+				$scope.buses = $filter('busFilter')({
+					data: $scope.busData,
+					name: $stateParams.name,
+					dest: $scope.dest
+				});
+			}
+			$scope.checkEmpty($scope.buses);
+		});
+		
+		$scope.timeout = function(bus) {
+			$scope.$apply(function() {
+				bus.timeout = true;
 			});
 		}
-		$scope.checkEmpty($scope.buses);
-	});
-	
-	$scope.timeout = function(bus) {
-		$scope.$apply(function() {
-			bus.timeout = true;
-		});
 	};
+	$scope.load();
 
 	$scope.changeDest = function(dest) {
 		$scope.dest = dest;
@@ -68,7 +69,15 @@ angular.module('tnua-bus.controllers', [])
 			dest: $scope.dest,
 			maxDiffTime: maxDiffTime
 		});
-	}
+	};
+
+	$scope.isSummer = TimeTableService.isSummer;
+	$scope.mode = $scope.isSummer() ? 'MODE_SUMMER' : 'MODE_NORMAL';
+	$scope.toggleMode = function() {
+		TimeTableService.setSummer(!$scope.isSummer());
+		$scope.mode = $scope.isSummer() ? 'MODE_SUMMER' : 'MODE_NORMAL';
+		$scope.load();
+	};
 
 	$scope.checkEmpty = function(buses) {
 		if (buses.length > 0) return;
@@ -93,6 +102,16 @@ angular.module('tnua-bus.controllers', [])
 .factory('TimeTableService', function($http, $q) {
 	var TimeTableService = {};
 	var THRESHOLD = 60 * 60 * 6;
+	var isSummer = function() {
+		var today = new Date();
+		var endSummerDay = new Date(2014, 8, 5).getTime();
+		var startSummerDay = new Date(2014, 5, 23).getTime();
+		if (today.getTime() > startSummerDay && today.getTime() < endSummerDay) {
+			return true;
+		} else {
+			return false;
+		}
+	}();
 
 	TimeTableService.getData = function() {
 		return $http.get('data.json').then(function(res) {
@@ -119,16 +138,12 @@ angular.module('tnua-bus.controllers', [])
 		return buses;
 	};
 
-	TimeTableService.isSummer = function() {
-		var today = new Date();
-		var endSummerDay = new Date(2014, 8, 5).getTime();
-		var startSummerDay = new Date(2014, 5, 23).getTime();
+	TimeTableService.setSummer = function(is) {
+		isSummer = is;
+	};
 
-		if (today.getTime() > startSummerDay && today.getTime() < endSummerDay) {
-			return true;
-		} else {
-			return false;
-		}
+	TimeTableService.isSummer = function() {
+		return isSummer;
 	};
 
 /*

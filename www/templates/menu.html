@@ -28,6 +28,24 @@
         <ion-item nav-clear menu-close href="#/bus/about">
           {{'ABOUT' | translate}}
         </ion-item>
+        <li class="item item-toggle">
+           周末
+           <label class="toggle toggle-assertive">
+             <input type="checkbox" ng-model="TimeTableService.isWeekend">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+        <li class="item item-toggle">
+           暑假
+           <label class="toggle toggle-balanced">
+             <input type="checkbox" ng-model="TimeTableService.isSummer">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
       </ion-list>
     </ion-content>
   </ion-side-menu>

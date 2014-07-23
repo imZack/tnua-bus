@@ -3,6 +3,9 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click='toggleMode()'>{{mode | translate}}</button>
+  </ion-nav-buttons>
   <div class="tabs tabs-icon-top">
     <a class="tab-item" ng-click='changeDest("TNUA")'>
     	<i class="icon ion-university"></i>
