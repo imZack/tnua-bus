@@ -43,7 +43,8 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     NO_BUSES_DESCR: 'Please select others.',
     THANKS: 'Thanks',
     MODE_SUMMER: 'Summer',
-    MODE_NORMAL: 'Normal'
+    MODE_NORMAL: 'Normal',
+    SWITCH_TO: 'Switch to'
   });
   $translateProvider.translations('zh-TW', {
     APP_NAME: '北藝大校車 APP',
@@ -67,7 +68,8 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     NO_BUSES_DESCR: '請選擇其他項目',
     THANKS: '謝謝',
     MODE_SUMMER: '暑假',
-    MODE_NORMAL: '正常'
+    MODE_NORMAL: '正常',
+    SWITCH_TO: '切換至'
   });
   $translateProvider.preferredLanguage('zh-TW');
 })

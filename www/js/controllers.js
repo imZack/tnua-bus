@@ -41,11 +41,10 @@ angular.module('tnua-bus.controllers', [])
 	};
 })
 
-.controller('AppCtrl', function($scope, $state, $stateParams, $filter, $translate, $ionicPopup, TimeTableService) {
+.controller('AppCtrl', function($scope, $ionicLoading, $state, $stateParams, $filter, $translate, $ionicPopup, TimeTableService) {
 	$scope.dest = 'TNUA';
 	$scope.name = $stateParams.name;
 	var maxDiffTime = Number.MAX_VALUE;
-
 	$scope.load = function() {
 		TimeTableService.getData().then(function(buses) {
 			$scope.busData = TimeTableService.calRemainingTime(buses);
@@ -87,10 +86,17 @@ angular.module('tnua-bus.controllers', [])
 
 	$scope.$on('toggleMode', function(event, args) {
 		$scope.load();
+		$ionicLoading.show({
+			template: $translate.instant('SWITCH_TO') + ' ' + $translate.instant($scope.mode), noBackdrop: true, duration: 2000
+		});
 	});
 
 	$scope.$on('toggleWeekend', function(event, args) {
 		$scope.load();
+		var text = TimeTableService.isWeekend ? 'weekend' : 'weekday';
+		$ionicLoading.show({
+			template: $translate.instant('SWITCH_TO') + ' ' + $translate.instant(text), noBackdrop: true, duration: 2000
+		});
 	});
 
 	$scope.$watch('TimeTableService.isSummer', function(newValue, oldValue) {

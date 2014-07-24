@@ -59,7 +59,7 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     special: '專車',
     summer_weekday: '暑假平日',
     summer_daily: '暑假每日',
-    dashboard: '總覽',
+    dashboard: '最近班次',
     red35: '紅 35',
     red55: '紅 55',
     shuttlebus: '校車',
@@ -78,7 +78,8 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
     .state('bus', {
       url: "/bus",
       abstract: true,
-      templateUrl: "templates/menu.html"
+      templateUrl: "templates/menu.html",
+      controller: "MenuCtrl"
     })
     .state('bus.about', {
       url: "/about",

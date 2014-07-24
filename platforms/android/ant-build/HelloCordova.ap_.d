@@ -122,6 +122,7 @@ H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\plugins\
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates\about.html \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates\app.html \
+H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates\e3644261-fd74-4bbf-989b-003a1473c017.dmp \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates\menu.html \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\assets\www\templates\timetable.html \
 H:\Copy\Dropbox\project\mobileapp\tnua-bus\platforms\android\ant-build\AndroidManifest.xml \
