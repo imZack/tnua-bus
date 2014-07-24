@@ -121,9 +121,7 @@ angular.module('tnua-bus.controllers', [])
 	    	type: 'button-positive',
 	    	text: $translate.instant('THANKS'),
 	    	onTap: function(e) {
-	    		if ($stateParams.name != 'dashboard') {
-	    			$state.go('bus.app', {name: 'dashboard'});
-	    		}
+	    		;
 	    	}
 	    }]
 	  });
@@ -133,8 +131,22 @@ angular.module('tnua-bus.controllers', [])
 	$scope.load();
 })
 
-.controller('MenuCtrl', function($scope, TimeTableService) {
+.controller('MenuCtrl', function($scope, $translate, TimeTableService) {
 	$scope.TimeTableService = TimeTableService;
+	$scope.english = window.localStorage['english'] === 'true';
+
+	$scope.changeEnglish = function() {
+		$scope.english = !$scope.english;
+		if ($scope.english) {
+			$translate.use('en_US');
+		} else {
+			$translate.use('zh_TW');
+		}
+		window.localStorage['english'] = $scope.english;
+		console.log('window.localStorage', window.localStorage['english'])
+	}
+
+	console.log('window.MenuCtrl', $scope.english);
 })
 
 .controller('AboutCtrl', function($scope, $stateParams) {
@@ -156,8 +168,8 @@ angular.module('tnua-bus.controllers', [])
 	}();
 
 	TimeTableService.isWeekend = function() {
-		if (today.getDay() <5) {
-			return true;
+		if (today.getDay() <=5) {
+			return false;
 		} else {
 			return true;
 		}
@@ -179,35 +191,15 @@ angular.module('tnua-bus.controllers', [])
 	};
 
 	TimeTableService.calRemainingTime = function(buses) {
-		var tmp = new Date();
-		var now = new Date(2014, 6, 23, 16, tmp.getMinutes(), tmp.getSeconds());
+		//var tmp = new Date();
+		//var now = new Date(2014, 6, 24, 12, tmp.getMinutes(), tmp.getSeconds());
+		var now = new Date();
 		angular.forEach(buses, function(bus, key) {
 				bus.timeout = false;
 				bus.remainingTime = ~~((bus.date.getTime() - now.getTime()) / 1000);
 			});
 		return buses;
 	};
-
-/*
-	TimeTableService.getTodayType = function() {
-
-
-		if (today.getTime() > startSummerDay && today.getTime() < endSummerDay) {
-			if (today.getDay() == 6 || today.getDay() == 0) {
-				return 'summer-weekend';
-			} else {
-				return 'summer-weekday';
-			}
-		} else {
-			if (today.getDay() == 6 || today.getDay() == 0) {
-				return 'weekend';
-			} else {
-				return 'weekday';
-			}
-		}
-	};
-*/
-
 
 	return TimeTableService;
 })
