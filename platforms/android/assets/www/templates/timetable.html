@@ -3,9 +3,6 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-nav-buttons side="right">
-    <button class="button" ng-click='toggleMode()'>{{mode | translate}}</button>
-  </ion-nav-buttons>
   <div class="tabs tabs-positive tabs-icon-top">
     <a class="tab-item" ng-click='changeDest("TNUA")'>
     	<i class="icon ion-university"></i>
@@ -20,9 +17,15 @@
   <div class="list list-inset">
 		<div class="item card-timetable" ng-repeat="bus in buses | orderBy:'time'">
 			{{bus.time}}
-			<label style="position: absolute; right: 5px;">
+			<label class="card-timetable-label">
 			{{bus.type | translate}}</label>
 		</div>
   </div>
+  <div ng-if="buses.length != 0">
+  	<div class="list list-inset" ng-if="name == 'red35'" translate="RED35_DESCR">
+  	</div>
+  	<div class="list list-inset" translate="BUS_DESCR"></div>
+  </div>
   </ion-content>
+  <img src="img/logo.png" class="no-buses" ng-if="buses.length == 0">
 </ion-view>
