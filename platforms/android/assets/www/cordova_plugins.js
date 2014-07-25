@@ -27,7 +27,7 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.device": "0.2.10",
-    "org.apache.cordova.inappbrowser": "0.5.0"
+    "org.apache.cordova.inappbrowser": "0.5.1-dev"
 }
 // BOTTOM OF METADATA
 });

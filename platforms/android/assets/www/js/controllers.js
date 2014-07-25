@@ -102,13 +102,11 @@ angular.module('tnua-bus.controllers', [])
 	$scope.$watch('TimeTableService.isSummer', function(newValue, oldValue) {
 		if (newValue == oldValue) return;
 		$scope.$emit('toggleMode');
-		console.log('toggleMode');
 	});
 
 	$scope.$watch('TimeTableService.isWeekend', function(newValue, oldValue) {
 		if (newValue == oldValue) return;
 		$scope.$emit('toggleWeekend');
-		console.log('toggleWeekend');
 	});
 
 	$scope.checkEmpty = function(buses) {
@@ -143,10 +141,8 @@ angular.module('tnua-bus.controllers', [])
 			$translate.use('zh_TW');
 		}
 		window.localStorage['english'] = $scope.english;
-		console.log('window.localStorage', window.localStorage['english'])
 	}
 
-	console.log('window.MenuCtrl', $scope.english);
 })
 
 .controller('AboutCtrl', function($scope, $stateParams) {
