@@ -1,7 +1,7 @@
 {
-  "name": "tnua-bus",
-  "version": "2.0.2",
-  "description": "A simple bus time table for Taipei National University of the Arts.",
+  "name": "ionic-project",
+  "version": "1.0.0",
+  "description": "An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
