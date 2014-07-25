@@ -15,6 +15,18 @@
 2. 靜態時刻表
 3. 中英文介面
 
+HACK
+====
+
+```
+$ git clone git@github.com:imZack/tnua-bus.git
+$ npm install
+$ ionic build android
+$ ionic run android
+```
+
+enjoy!
+
 免責聲明
 ========
 - 實際公車行駛時間請以最新公告為主
