@@ -1,6 +1,12 @@
 {
   "name": "tnua-bus",
+<<<<<<< HEAD
   "email": "shih@yulun.me",
   "app_id": "zack.tnuabus",
   "package_name": "zack.tnuabus"
+=======
+  "email": "",
+  "app_id": "",
+  "package_name": ""
+>>>>>>> parent of d0b1bd0... clean files and update
 }
