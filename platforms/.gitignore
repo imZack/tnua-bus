@@ -1,2 +1,4 @@
-android/ant-build
-android/ant-gen
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
