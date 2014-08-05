@@ -1,11 +1,15 @@
-北藝大校車時刻表
-================
+TNUA - Bus Timetable 北藝大校車時刻表 
+=====================================
 
 <img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_4.png" width="200px" style="display: inline-block;">|<img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_1.png" width="200px" style="display: inline-block;">|<img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_2.png" width="200px" style="display: inline-block;">|<img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_3.png" width="200px" style="display: inline-block;">|<img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_5.png" width="200px" style="display: inline-block;">|<img src="https://raw.githubusercontent.com/imZack/tnua-bus/master/screenshots/tnua_6.png" width="200px" style="display: inline-block;">
 
-[>>Android 下載連結<<](https://play.google.com/store/apps/details?id=zack.tnuabus)
+[>> Android Download Link | 下載連結 <<](https://play.google.com/store/apps/details?id=zack.tnuabus)
 
-更多資訊請至 [http://yulun.me/tnua/](http://yulun.me/tnua/)留言 或 `pull request`, `create an issue`
+More information please visit (in chinese): [http://yulun.me/tnua/](http://yulun.me/tnua/) or [Pull Request](https://github.com/imZack/tnua-bus), [Create an Issue](https://github.com/imZack/tnua-bus/issues/new)
+
+> This app is built with [IONIC](http://ionicframework.com/)
+
+更多資訊請至 [http://yulun.me/tnua/](http://yulun.me/tnua/)留言 或 在本專案發 [issue](https://github.com/imZack/tnua-bus/issues/new) 給我
 
 > 本專案使用 [IONIC](http://ionicframework.com/) 製作
 
