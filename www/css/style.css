@@ -24,6 +24,8 @@
 .card-timetable {
 	text-align: center;
 	font-weight: bold;
+  left: 0;
+  right: 0;
 }
 
 .card-timetable-label {
