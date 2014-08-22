@@ -14,11 +14,6 @@
   </div>
   <ion-content class="has-header has-tabs">
   <div class="list">
-<!-- 		<div class="item card-timetable" ng-repeat="bus in buses | orderBy:'time'">
-			{{bus.time}}
-			<label class="card-timetable-label">
-			{{bus.type | translate}}</label>
-		</div> -->
     <div class="item card-timetable"
       collection-repeat="bus in buses | orderBy:'time'"
       collection-item-width="'100%'"

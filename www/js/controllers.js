@@ -125,11 +125,6 @@ angular.module('tnua-bus.controllers', [])
 	  });
 	}
 
-	$scope.getItemHeight = function(item, index) {
-		//Make evenly indexed items be 10px taller, for the sake of example
-		return 50;
-	};
-
 	// bootstrap
 	$scope.load();
 })
