@@ -1,6 +1,12 @@
+app/bower_components/
+.sass-cache/
+.tmp/
+coverage/
+hooks/
+merges/
 node_modules/
-*.dmp
-*.keystore
-*.sw*
-platforms/^.*
-.idea
+platforms/
+plugins/
+www/
+.DS_Store
+npm-debug.log

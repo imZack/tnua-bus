@@ -13,12 +13,8 @@
     </a>
   </div>
   <ion-content class="has-header has-tabs">
-  <div class="list">
-    <div class="item card-timetable"
-      collection-repeat="bus in buses | orderBy:'time'"
-      collection-item-width="'100%'"
-      collection-item-height="50"
-      ng-style="{height: getItemHeight(bus, $index)}">
+  <div class="list list-inset">
+    <div class="item card-timetable" ng-repeat="bus in buses | orderBy:'time'">
       {{bus.time}}
       <label class="card-timetable-label">{{bus.type | translate}}</label>
     </div>
