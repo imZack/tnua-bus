@@ -4,29 +4,25 @@
   </ion-nav-buttons>
   <div class="tabs tabs-positive tabs-icon-top">
     <a class="tab-item" ng-click='changeDest("TNUA")'>
-    	<i class="icon ion-university"></i>
+      <i class="icon ion-university"></i>
       {{'TO' | translate}} {{'TNUA' | translate}}
     </a>
     <a class="tab-item" ng-click='changeDest("Kuandu_MRT")'>
-    	<i class="icon ion-home"></i>
+      <i class="icon ion-home"></i>
       {{'TO' | translate}} {{'Kuandu_MRT' | translate}}
     </a>
   </div>
   <ion-content class="has-header has-tabs">
-  <div class="list">
-    <div class="item card-timetable"
-      collection-repeat="bus in buses | orderBy:'time'"
-      collection-item-width="'100%'"
-      collection-item-height="50"
-      ng-style="{height: getItemHeight(bus, $index)}">
+  <div class="list list-inset">
+    <div class="item card-timetable" ng-repeat="bus in buses | orderBy:'time'">
       {{bus.time}}
       <label class="card-timetable-label">{{bus.type | translate}}</label>
     </div>
   </div>
   <div ng-if="buses.length != 0">
-  	<div class="list list-inset" ng-if="name == 'red35'" translate="RED35_DESCR">
-  	</div>
-  	<div class="list list-inset" translate="BUS_DESCR"></div>
+    <div class="list list-inset" ng-if="name == 'red35'" translate="RED35_DESCR">
+    </div>
+    <div class="list list-inset" translate="BUS_DESCR"></div>
   </div>
   </ion-content>
   <img src="img/logo.png" class="no-buses" ng-if="buses.length == 0">

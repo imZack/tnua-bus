@@ -4,11 +4,11 @@
   </ion-nav-buttons>
   <div class="tabs tabs-positive tabs-icon-top">
     <a class="tab-item" ng-click='changeDest("TNUA")'>
-    	<i class="icon ion-university"></i>
+      <i class="icon ion-university"></i>
       {{'TO' | translate}} {{'TNUA' | translate}}
     </a>
     <a class="tab-item" ng-click='changeDest("Kuandu_MRT")'>
-    	<i class="icon ion-home"></i>
+      <i class="icon ion-home"></i>
       {{'TO' | translate}} {{'Kuandu_MRT' | translate}}
     </a>
   </div>
@@ -20,9 +20,9 @@
     </div>
   </div>
   <div ng-if="buses.length != 0">
-  	<div class="list list-inset" ng-if="name == 'red35'" translate="RED35_DESCR">
-  	</div>
-  	<div class="list list-inset" translate="BUS_DESCR"></div>
+    <div class="list list-inset" ng-if="name == 'red35'" translate="RED35_DESCR">
+    </div>
+    <div class="list list-inset" translate="BUS_DESCR"></div>
   </div>
   </ion-content>
   <img src="img/logo.png" class="no-buses" ng-if="buses.length == 0">
