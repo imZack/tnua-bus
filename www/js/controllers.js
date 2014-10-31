@@ -41,7 +41,7 @@ angular.module('tnua-bus.controllers', [])
 	};
 })
 
-.controller('AppCtrl', function($scope, $ionicLoading, $state, $stateParams, $filter, $translate, $ionicPopup, TimeTableService) {
+.controller('AppCtrl', function($scope, $ionicLoading, $state, $stateParams, $filter, $translate, $ionicPopup, TimeTableService) {	
 	$scope.dest = 'TNUA';
 	$scope.name = $stateParams.name;
 	var maxDiffTime = Number.MAX_VALUE;
@@ -64,7 +64,15 @@ angular.module('tnua-bus.controllers', [])
 					dest: $scope.dest
 				});
 			}
-			$scope.checkEmpty($scope.buses);
+
+			if (window.localStorage['reviewBox'] !== 'false') {
+			 	$scope.reviewBox().then(function() {
+			 		window.localStorage['reviewBox'] = 'false';
+			 		$scope.checkEmpty($scope.buses);
+			 	});
+			} else {
+				$scope.checkEmpty($scope.buses);
+			}
 		});
 		$scope.mode = TimeTableService.isSummer ? 'MODE_SUMMER' : 'MODE_NORMAL';
 	};
@@ -111,18 +119,38 @@ angular.module('tnua-bus.controllers', [])
 
 	$scope.checkEmpty = function(buses) {
 		if (buses.length > 0) return;
-	  var popup = $ionicPopup.show({
-	    title: $translate.instant('NO_BUSES'),
-	    subTitle: $translate.instant('NO_BUSES_DESCR'),
-	    scope: $scope,
-	    buttons: [{
-	    	type: 'button-positive',
-	    	text: $translate.instant('THANKS'),
-	    	onTap: function(e) {
-	    		;
-	    	}
-	    }]
-	  });
+		var popup = $ionicPopup.show({
+		  title: $translate.instant('NO_BUSES'),
+		  subTitle: $translate.instant('NO_BUSES_DESCR'),
+		  scope: $scope,
+		  buttons: [{
+		  	type: 'button-positive',
+		  	text: $translate.instant('THANKS'),
+		  	onTap: function(e) {
+		  		;
+		  	}
+		  }]
+		});
+	}
+
+	$scope.reviewBox = function() {
+		return $ionicPopup.show({
+		  title: $translate.instant('REVIEW_TITLE'),
+		  subTitle: $translate.instant('REVIEW_SUBTITLE'),
+		  buttons: [{
+		    type: 'button',
+		    text: $translate.instant('THANKS'),
+		    onTap: function(e) {
+
+		    }
+		  },{
+		    type: 'button-positive',
+		    text: $translate.instant('GO_REVIEW'),
+		    onTap: function(e) {
+		      window.open('https://play.google.com/store/apps/details?id=zack.tnuabus', '_system');
+		    }
+		  }]
+		});
 	}
 
 	// bootstrap
@@ -147,6 +175,12 @@ angular.module('tnua-bus.controllers', [])
 
 .controller('AboutCtrl', function($scope, $stateParams) {
 })
+
+// .controller('NewsCtrl', function($scope, $http) {
+// 	$http.jsonp('https://www.kimonolabs.com/api/66x84hug?apikey=r2BhgbITAIDyGzMLPirTryPpHCDNvT1a&callback=JSON_CALLBACK').success(function(res) {
+// 		$scope.news = res.results.collection1;
+// 	})
+// })
 
 .factory('TimeTableService', function($http, $q) {
 	var TimeTableService = {};

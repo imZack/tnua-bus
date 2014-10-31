@@ -6,13 +6,14 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.translate', 'tnua-bus.controllers'])
 
-.run(function($ionicPlatform, $ionicLoading) {
+.run(function($ionicPlatform, $ionicLoading, $ionicPopup, $translate) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
+    
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -24,6 +25,9 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
   $translateProvider.translations('en_US', {
     APP_NAME: 'TNUA BUS APP',
     ABOUT: 'About',
+    GO_REVIEW: 'Go Review',
+    REVIEW_TITLE: 'Rating this APP!',
+    REVIEW_SUBTITLE: 'If you like this APP, Please Give Us A 5-Star Rating!',
     SETTINGS: 'Settings',
     MINUTES: 'minutes',
     TIME_NO: 'Time',
@@ -51,6 +55,9 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
   $translateProvider.translations('zh_TW', {
     APP_NAME: '北藝大校車 APP',
     ABOUT: '關於',
+    GO_REVIEW: '前往評分',
+    REVIEW_TITLE: '幫 APP 評分吧！',
+    REVIEW_SUBTITLE: '如果你喜歡這個 APP 請給我們五顆星評分，謝謝！',
     SETTINGS: '設定',
     MINUTES: '分',
     TIME_NO: '班次',
@@ -103,6 +110,15 @@ angular.module('tnua-bus', ['ngAnimate', 'ionic', 'timer', 'pascalprecht.transla
         }
       }
     })
+    // .state('bus.news', {
+    //   url: "/news",
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: "templates/news.html",
+    //       controller: 'NewsCtrl'
+    //     }
+    //   }
+    // })
     .state('bus.app', {
       url: "/:name",
       views: {
