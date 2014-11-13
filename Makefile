@@ -9,4 +9,7 @@ sign:
 zipalign:
 	zipalign -v 4 ./platforms/android/ant-build/TnuaBus-release-unsigned.apk ./platforms/android/ant-build/TnuaBus-release.apk
 
+clean:
+	rm -rf ./platforms/android/ant-build/**
+
 .PHONY: apk release sign zipalign
