@@ -112,7 +112,7 @@
 		{"name": "shuttlebus", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "18:20"},
 		{"name": "shuttlebus", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "18:40"},
 		{"name": "shuttlebus", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "19:30"},
-		{"name": "shuttlebus", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "20:02"},
+		{"name": "shuttlebus", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "20:05"},
 		{"name": "shuttlebus", "type": "summer_weekday", "src": "Kuandu_MRT", "dest": "TNUA", "time": "07:50"},
 		{"name": "shuttlebus", "type": "summer_weekday", "src": "Kuandu_MRT", "dest": "TNUA", "time": "08:10"},
 		{"name": "shuttlebus", "type": "summer_weekday", "src": "Kuandu_MRT", "dest": "TNUA", "time": "08:30"},
@@ -236,10 +236,6 @@
 		{"name": "red35", "type": "summer_daily", "src": "TNUA", "dest": "Kuandu_MRT", "time": "20:25"},
 		{"name": "red35", "type": "summer_daily", "src": "TNUA", "dest": "Kuandu_MRT", "time": "21:15"},
 		{"name": "red35", "type": "summer_daily", "src": "TNUA", "dest": "Kuandu_MRT", "time": "22:15"},
-		{"name": "red35", "type": "summer_daily", "src": "TNUA", "dest": "Kuandu_MRT", "time": "22:55"},
-		{"name": "special", "type": "weekday", "src": "Kuandu_MRT", "dest": "TNUA", "time": "19:40"},
-		{"name": "special", "type": "weekday", "src": "Kuandu_MRT", "dest": "TNUA", "time": "20:15"},
-		{"name": "special", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "19:30"},
-		{"name": "special", "type": "weekday", "src": "TNUA", "dest": "Kuandu_MRT", "time": "20:05"}
+		{"name": "red35", "type": "summer_daily", "src": "TNUA", "dest": "Kuandu_MRT", "time": "22:55"}
 	]
 }
